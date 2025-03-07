@@ -1,10 +1,9 @@
 "use server"
 
+import { prisma } from "@/lib/db"
 import { PrismaClient } from "@prisma/client"
 import bcrypt from "bcrypt"
 import { z } from "zod"
-
-const prisma = new PrismaClient()
 
 const lenderSchema = z.object({
   name: z.string().min(2),
@@ -15,6 +14,7 @@ const lenderSchema = z.object({
 type LenderData = z.infer<typeof lenderSchema>
 
 export async function createLender(data: LenderData) {
+  "use server"
   try {
     const validation = lenderSchema.safeParse(data)
     if (!validation.success) {

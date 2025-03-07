@@ -41,9 +41,9 @@ export function Dashboard() {
   }
 
   return (
-    <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+    <div className="grid gap-4 md:grid-cols-4 lg:grid-cols-4">
       <Card>
-        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+        <CardHeader className="flex flex-row items-center justify-between space-y-0">
           <CardTitle className="text-sm font-medium">Total Loans</CardTitle>
         </CardHeader>
         <CardContent>
@@ -56,12 +56,12 @@ export function Dashboard() {
       </Card>
 
       <Card>
-        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+        <CardHeader className="flex flex-row items-center justify-between space-y-0">
           <CardTitle className="text-sm font-medium">Active Loans</CardTitle>
         </CardHeader>
         <CardContent>
           {isLoading ? (
-            <Skeleton className="h-7 w-[100px]" />
+            <Skeleton className="h-7 w-[50px]" />
           ) : (
             <div className="text-2xl font-bold">{data?.activeLoans}</div>
           )}
@@ -69,7 +69,7 @@ export function Dashboard() {
       </Card>
 
       <Card>
-        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+        <CardHeader className="flex flex-row items-center justify-between space-y-0">
           <CardTitle className="text-sm font-medium">Total Amount</CardTitle>
         </CardHeader>
         <CardContent>
@@ -84,7 +84,7 @@ export function Dashboard() {
       </Card>
 
       <Card>
-        <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+        <CardHeader className="flex flex-row items-center justify-between space-y-0">
           <CardTitle className="text-sm font-medium">Average Loan</CardTitle>
         </CardHeader>
         <CardContent>

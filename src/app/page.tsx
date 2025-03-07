@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "./api/auth/[...nextauth]/options";
 import { Dashboard } from "@/components/Dashboard";
+import { LoansList } from "@/components/LoansList";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -13,9 +14,9 @@ export default async function Home() {
     <div className="min-h-screen p-8">
       <main className="max-w-7xl mx-auto">
         {session ? (
-          <div className="space-y-8">
-            <h1 className="text-3xl font-bold">Welcome, {session.user?.name}</h1>
+          <div className="space-y-2">
             <Dashboard />
+            <LoansList />
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center min-h-[60vh] space-y-6">
