@@ -27,6 +27,8 @@ model Lender {
   loans     Loan[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@index([email])
 }
 
 model Borrower {
